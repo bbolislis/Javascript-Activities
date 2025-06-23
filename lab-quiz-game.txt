@@ -1,0 +1,52 @@
+const questions = [];
+
+const question1 = {
+  category: 'category1',
+  question: 'first question?',
+  choices: ['a', 'b', 'c'],
+  answer: 'b'
+}
+const question2 = {
+  category: 'category2',
+  question: 'second question?',
+  choices: ['a', 'b', 'c'],
+  answer: 'a'
+}
+const question3 = {
+  category: 'category3',
+  question: 'third question?',
+  choices: ['a', 'b', 'c'],
+  answer: 'c'
+}
+const question4 = {
+  category: 'category4',
+  question: 'fourth question?',
+  choices: ['a', 'b', 'c'],
+  answer: 'a'
+}
+const question5 = {
+  category: 'category5',
+  question: 'fifth question?',
+  choices: ['a', 'b', 'c'],
+  answer: 'c'
+}
+
+questions.push(question1, question2, question3, question4, question5)
+
+const getRandomQuestion = question => {
+  let random = Math.floor(Math.random() * question.length);
+  return question[random];
+}
+
+const getRandomComputerChoice = choice => {
+  let random = Math.floor(Math.random() * choice.length);
+  return choice[random];
+}
+
+const getResults = (answer, computerChoice) => {
+  if (answer.answer === computerChoice) {
+    return `The computer's choice is correct!`;
+  } else {
+    return `The computer's choice is wrong. The correct answer is: ${answer.answer}`;
+  }
+}

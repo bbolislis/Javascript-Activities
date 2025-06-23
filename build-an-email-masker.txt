@@ -1,0 +1,10 @@
+let email = "tester@notevil.org";
+
+function maskEmail(email) {
+  const partToHide = email.slice(1, email.indexOf('@') - 1);
+  const encode = partToHide.replace(partToHide, '*'.repeat(partToHide.length));
+  const emailToDisplay = email.charAt(0) + encode + email.slice(email.indexOf('@') - 1);
+  return emailToDisplay
+}
+
+console.log(maskEmail(email))

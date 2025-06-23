@@ -1,0 +1,52 @@
+const lunches = [];
+
+function addLunchToEnd (lunches, str) {
+  lunches.push(str);
+  console.log(`${str} added to the end of the lunch menu.`);
+  return lunches;
+}
+
+
+function addLunchToStart (lunches, str) {
+  lunches.unshift(str);
+  console.log( `${str} added to the start of the lunch menu.`);
+  return lunches;
+}
+
+function removeLastLunch(lunches) {
+  if (lunches.length > 0) {
+    const removedItem = lunches.pop();
+    console.log(`${removedItem} removed from the end of the lunch menu.`);
+    return lunches;
+  } else {
+    console.log("No lunches to remove.");
+  }
+}
+
+function removeFirstLunch (lunches) {
+  if (lunches.length > 0) {
+    const removedItem = lunches.shift();
+    console.log(`${removedItem} removed from the start of the lunch menu.`);
+    return lunches;
+  } else {
+    console.log("No lunches to remove.");
+  }
+}
+
+function getRandomLunch (lunches) {
+  if (lunches.length > 0) {
+    const selectedItem = Math.floor(Math.random() * lunches.length);
+    console.log(`Randomly selected lunch: ${lunches[selectedItem]}`)
+  } else {
+    console.log("No lunches available.")
+  }
+}
+
+function showLunchMenu (lunches) {
+  if (lunches.length > 0) {
+    const [lunch1, lunch2, ...rest] = lunches;
+    console.log(`Menu items: ${lunch1}, ${lunch2}, ${rest}`) 
+  } else {
+    console.log("The menu is empty.")
+  }
+}
